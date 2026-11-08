@@ -1,0 +1,77 @@
+{
+  "name": "Handoff classifier — sample run",
+  "description": "Made-up results for a fictional coffee subscription's support bot. The classifier answers one question: should this message go to a person? Each case was run 5 times.",
+  "runDate": "2026-11-08",
+  "cases": [
+    {
+      "id": "c01",
+      "input": "I've been charged twice this month and I want a refund now.",
+      "expected": true,
+      "note": "Billing dispute with a direct request for a refund.",
+      "runs": [true, true, true, true, true]
+    },
+    {
+      "id": "c02",
+      "input": "How do I pause my subscription for two weeks?",
+      "expected": false,
+      "note": "How-to question the bot can answer.",
+      "runs": [false, true, false, false, false]
+    },
+    {
+      "id": "c03",
+      "input": "Can I talk to a human please?",
+      "expected": true,
+      "note": "Direct request for a person.",
+      "runs": [true, true, true, true, true]
+    },
+    {
+      "id": "c04",
+      "input": "My order says delivered but it's not here.",
+      "expected": true,
+      "note": "Missing delivery needs a person to check with the courier.",
+      "runs": [true, false, true, true, false]
+    },
+    {
+      "id": "c05",
+      "input": "What's the difference between the light and dark roast boxes?",
+      "expected": false,
+      "note": "Product question.",
+      "runs": [false, false, false, false, false]
+    },
+    {
+      "id": "c06",
+      "input": "This is the third time I've asked. Your bot keeps giving me the same useless answer.",
+      "expected": true,
+      "note": "Repeated frustration. The bot should step aside.",
+      "runs": [true, true, false, true, true]
+    },
+    {
+      "id": "c07",
+      "input": "I'm a person who loves coffee. How do I change my grind size?",
+      "expected": false,
+      "note": "Contains the word 'person' but isn't asking for one.",
+      "runs": [false, true, false, true, false]
+    },
+    {
+      "id": "c08",
+      "input": "Update my delivery address to 12 Example Street.",
+      "expected": false,
+      "note": "Account change the bot can do.",
+      "runs": [false, false, false, false, false]
+    },
+    {
+      "id": "c09",
+      "input": "I think someone else is using my account.",
+      "expected": true,
+      "note": "Possible account takeover. Always goes to a person.",
+      "runs": [true, true, true, true, true]
+    },
+    {
+      "id": "c10",
+      "input": "Thanks, that fixed it!",
+      "expected": false,
+      "note": "Conversation is finished.",
+      "runs": [false, false, true, false, false]
+    }
+  ]
+}
