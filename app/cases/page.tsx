@@ -28,7 +28,7 @@ export default function CasesPage() {
               <td>{c.input}</td>
               <td>{c.expected ? "Person" : "Bot"}</td>
               <td>
-                {passCont(c)} / {c.runs.length}
+                {passCount(c)} / {c.runs.length}
               </td>
               <td>{isFlaky(c) ? "Flaky" : "Stable"}</td>
             </tr>
